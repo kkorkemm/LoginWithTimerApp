@@ -1,0 +1,84 @@
+﻿<Window x:Class="LoginWithTimerApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LoginWithTimerApp"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800"
+        Closing="Window_Closing">
+    <Grid>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel VerticalAlignment="Center"
+                    Grid.Column="1">
+
+            <TextBlock Text="Авторизация"
+                       FontSize="22"
+                       FontWeight="Bold"
+                       TextAlignment="Center"
+                       TextWrapping="Wrap"
+                       HorizontalAlignment="Center"
+                       Margin="0 0 0 20"/>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.3*"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.Resources>
+                    <Style TargetType="TextBlock">
+                        <Setter Property="VerticalAlignment" Value="Center"/>
+                        <Setter Property="Margin" Value="0 10 0 10"/>
+                    </Style>
+                    <Style TargetType="TextBox">
+                        <Setter Property="VerticalAlignment" Value="Center"/>
+                        <Setter Property="Grid.Column" Value="1"/>
+                    </Style>
+                    <Style TargetType="PasswordBox">
+                        <Setter Property="VerticalAlignment" Value="Center"/>
+                        <Setter Property="Grid.Column" Value="1"/>
+                    </Style>
+                </Grid.Resources>
+                
+                <TextBlock Text="Логин: "/>
+                <TextBox x:Name="TextLogin"/>
+
+                <TextBlock Text="Пароль: "
+                           Grid.Row="1"/>
+                <PasswordBox x:Name="TextPass"
+                             Grid.Row="1"/>
+            </Grid>
+
+            <Button x:Name="BtnLogin"
+                    Content="Войти"
+                    Click="BtnLogin_Click"
+                    Margin="0 20 0 20"
+                    Background="#f32ea3"
+                    Foreground="White"
+                    Padding="5"
+                    BorderThickness="0"
+                    Cursor="Hand"
+                    FontWeight="SemiBold"/>
+
+            <TextBlock Text="TextTimer"
+                       x:Name="TextTimer"
+                       FontWeight="SemiBold"
+                       HorizontalAlignment="Center"
+                       TextAlignment="Center"
+                       TextWrapping="Wrap"/>
+
+        </StackPanel>
+        
+    </Grid>
+</Window>
